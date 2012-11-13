@@ -1,0 +1,26 @@
+﻿Especificacion de requerimientos.
+
+Un plugin en el navegador de manera que al navegar por la pagina de un libro devuelva un magnetic link con el epub.
+
+Para la primera version lo que habiamos pensado es:
+
+1º el plugin se carga en la barra de direcciones donde se instalan por ejemplo adblock plus, firebug, noscript, downloadhelper.
+(nota para paendragon-> la barra de abajo ya no esta visible por defecto en las versiones actuales y se desaconseja su uso, de momento nos sirve donde esta pero como me has hablado de mejoras, esa es una posible si puedes (yo hasta ahora no he sido capaz tienes mis pruebas por si ves un bug en el otro github).
+2º El icono cambia cuando "reconoce" un libro (ya esta implementado)
+3º Al pulsar al icono se obtiene directamente el magnet obtenido de TPB con una busqueda que nos de "nuestros" libros, bueno el URL del magnet, el navegador pedira la apertura del cliente de torrent directamente (para esto se deberia parsear la respuesta de TPB), esto si que me imagino que nos dara un poco mas de curro. sobre todo porque ahora las pruebas son sin epub subidos. 
+4º Reconocera libros no solo de epublibre (esto es para dar cobertura a la web).
+	el metodo que habiamos pensado para esto es que se le pase a la funcion de busqueda pares (web, patron de busqueda) y dependiendo de la web donde este sea capaz de ver titulo y autor y sacar el libro igualmente. aqui nos podemos dividir el curro de identificar las cadenas de busqueda cada uno de alguna pagina y hay que ver la implementacion que solo esta esbozada de momento.
+
+esto para la primera version operativa.
+
+Yo me he lanzado a el estudio del plugin en chrome porque me parece mas facil que el de firefox.
+
+pero aun no he tenido tiempo de probar mas que un par de ejemplos, por cierto bastante facilitos, pero muy potentes.
+
+Para versiones mas avanzadas contemplamos que la busqueda no sea en TPB solamente, y que al subir los aportes se añada el mgl(magnetic link)
+y se guarde en la nube pero en forma stealth la idea incial es entradas partidas en foros con acesso por user/pass.
+de manera que la busqueda sea por par idbook-magnet.
+la reconfiguracion de las URL de obtencion de forma automatica, la generacion de sistemas backup online de esos datos (poder tener varios origenes de datos de manera que si falla uno se lea de otro) y sistema de aviso de caidas.
+la idea es programar objetos XPCOM que sean legibles como el codigo de un plugin normal para ocultar el algoritmo interno basado en "nuestra" base de datos y ofuscar en la medida de lo posible los sistemas de stealth. ejemplo no guardar el magnet completo, sino en trozos que se recostruyen por codigo, se `pueden añadir operaciones matematicas de reconstruccion para que no se vea en el trafico en claro el magnet.
+la version mas ambiciosa incluiria dentro del plugin un cliente de bittorent de manera que no se devuelve el magnet sino el epub directamente se pueden tener una red de libros con los plugins y generar semillas intrasistema, cifrar todo el trafico, todo un mundo de posibilidades, que ahora misma es totalmente utopico, pero con el tiempo y mucho curro...(bueno de todo esto ultimo de momento nos olvidamos, son solo ideas paranoides)
+
